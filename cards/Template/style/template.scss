@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    outline: 0;
+}
+
+@mixin flex($width: 100%, $justify: false, $align: false) {
+    display: flex;
+    width: $width;
+
+    @if $justify {
+        justify-content: $justify;
+    }
+
+    @if $align {
+        align-items: $align;
+    }
+}
+
+.wrapper {
+    height: 100vh;
+    @include flex(100%, center, center)
+}
