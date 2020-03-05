@@ -1,0 +1,34 @@
+$sm: 576;
+$md: 768;
+$lg: 992;
+$eg: 1200;
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    outline: 0;
+}
+
+@mixin flex($width: 100%, $justify: false, $align: false) {
+    display: flex;
+    width: $width;
+
+    @if $justify {
+        justify-content: $justify;
+    }
+
+    @if $align {
+        align-items: $align;
+    }
+}
+
+.wrapper {
+    height: 100vh;
+    @include flex(100%, center)
+}
+
+$rootPath: './../../../';
+$contentPath: '#{rootPath}content/';
+
+@import '#{$contentPath}content.scss';

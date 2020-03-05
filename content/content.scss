@@ -1,0 +1,28 @@
+.container {
+    width: 100%;
+    max-width: 350px;
+}
+
+@media (min-width: '#{$sm}px') and (max-width: '#{$md - 1}px') {
+    .container {
+        max-width: 560px;
+    }
+}
+
+@media (min-width: '#{$md}px') and (max-width: '#{$lg - 1}px') {
+    .container {
+        max-width: 760px;
+    }
+}
+
+@media (min-width: '#{$lg}px') and (max-width: '#{$eg - 1}px') {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: '#{$eg}px') {
+    .container {
+        max-width: 1140px;
+    }
+}
