@@ -1,3 +1,5 @@
+$prefixes: "-webkit-", "-moz-", "-ms-", "-o-";
+
 $sm: 576;
 $md: 768;
 $lg: 992;
@@ -8,6 +10,17 @@ $eg: 1200;
     margin: 0;
     text-decoration: none;
     outline: 0;
+}
+
+@mixin prefixes($property, $value) {
+    @each $prefix in $prefixes {
+        #{$prefix}#{$property}: $value;
+    }
+    #{$property}: $value;
+}
+
+@mixin box-shadow($value) {
+    @include prefixes("box-shadow", $value);
 }
 
 @mixin flex($width: 100%, $justify: false, $align: false) {
@@ -25,10 +38,7 @@ $eg: 1200;
 
 .wrapper {
     height: 100vh;
-    @include flex(100%, center)
+    @include flex(100%, center);
 }
 
-$rootPath: './../../../';
-$contentPath: '#{rootPath}content/';
-
-@import '#{$contentPath}content.scss';
+@import "./../../../content/content.scss";

@@ -1,22 +1,53 @@
-/* Error: This file is already being loaded.
- *   ,--> main.scss
- * 34| @import '#{$contentPath}content.scss';
- *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ new load
- *   '
- *   ,--> uifer-category-card.scss
- * 1 | @import 'main.scss';
- *   |         =========== original load
- *   '
- *   main.scss 34:9                @import
- *   uifer-category-card.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: This file is already being loaded.\a   \250c \2500 \2500 > main.scss\a 34\2502  @import '#{$contentPath}content.scss';\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ new load\a   \2575 \a   \250c \2500 \2500 > uifer-category-card.scss\a 1 \2502  @import 'main.scss';\a   \2502          \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501  original load\a   \2575 \a   main.scss 34:9                @import\a   uifer-category-card.scss 1:9  root stylesheet";
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    outline: 0;
 }
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.container {
+    max-width: 350px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .container {
+        max-width: 560px;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: 760px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+.card {
+    -webkit-box-shadow: 0 0 10px 0 #333;
+    -moz-box-shadow: 0 0 10px 0 #333;
+    -ms-box-shadow: 0 0 10px 0 #333;
+    -o-box-shadow: 0 0 10px 0 #333;
+    box-shadow: 0 0 10px 0 #333;
+}
+.card .card-body {
+    padding: 20px 35px;
+}
+
+/*# sourceMappingURL=uifer-category-card.css.map */
